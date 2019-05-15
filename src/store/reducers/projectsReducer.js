@@ -95,11 +95,47 @@ const initState = {
 				}
 			]
 		}
-	]
+	],
+	languages: [
+		{ urlParam: "javascript", name: "JavaScript" },
+		{ urlParam: "html+php", name: "HTML+PHP" },
+		{ urlParam: "java", name: "Java" }
+	],
+	urlParams: {
+		lang: "javascript",
+		since: {
+			daily: true,
+			weekly: false,
+			monthly: false
+		}
+	}
 };
 
 const projectsReducer = (state = initState, action) => {
-	return state;
+	switch (action.type) {
+		case "CHANGE_LANGUAGE":
+			return {
+				...state,
+				urlParams: {
+					...state.urlParams,
+					lang: action.lang
+				}
+			};
+		case "CHANGE_SINCE":
+			return {
+				...state,
+				urlParams: {
+					...state.urlParams,
+					since: {
+						...state.urlParams.since,
+						[action.param]: !state.urlParams.since[action.param]
+					}
+				}
+			};
+
+		default:
+			return state;
+	}
 };
 
 export default projectsReducer;
