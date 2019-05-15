@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 import Container from "../common/Container";
 import ProjectsList from "../ProjectsList/ProjectsList";
@@ -13,17 +12,11 @@ class Main extends Component {
 				<Container>
 					<LangFilter />
 					<SinceFilter />
-					<ProjectsList projects={this.props.projects} />
+					<ProjectsList />
 				</Container>
 			</main>
 		);
 	}
 }
 
-const mapStateToProps = state => {
-	return {
-		projects: state.projects
-	};
-};
-
-export default connect(mapStateToProps)(Main);
+export default Main;

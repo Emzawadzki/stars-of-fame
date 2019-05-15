@@ -96,11 +96,6 @@ const initState = {
 			]
 		}
 	],
-	languages: [
-		{ urlParam: "javascript", name: "JavaScript" },
-		{ urlParam: "html+php", name: "HTML+PHP" },
-		{ urlParam: "java", name: "Java" }
-	],
 	urlParams: {
 		lang: "javascript",
 		since: {
@@ -112,6 +107,8 @@ const initState = {
 };
 
 const projectsReducer = (state = initState, action) => {
+	console.log(state);
+
 	switch (action.type) {
 		case "CHANGE_LANGUAGE":
 			return {
@@ -121,6 +118,7 @@ const projectsReducer = (state = initState, action) => {
 					lang: action.lang
 				}
 			};
+
 		case "CHANGE_SINCE":
 			return {
 				...state,

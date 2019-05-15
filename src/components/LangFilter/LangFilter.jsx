@@ -10,6 +10,7 @@ class LangFilter extends Component {
 
 	render() {
 		const { languages, activeLang } = this.props;
+
 		return (
 			<select value={activeLang} onChange={this.handleChange}>
 				{languages.map(lang => {
@@ -24,10 +25,10 @@ class LangFilter extends Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ lang, proj }) => {
 	return {
-		languages: state.languages,
-		activeLang: state.urlParams.lang
+		languages: lang.languages,
+		activeLang: proj.urlParams.lang
 	};
 };
 
@@ -37,4 +38,7 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LangFilter);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(LangFilter);

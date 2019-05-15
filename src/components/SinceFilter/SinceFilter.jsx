@@ -30,9 +30,9 @@ class SinceFilter extends Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ proj }) => {
 	return {
-		params: state.urlParams.since
+		params: proj.urlParams.since
 	};
 };
 
