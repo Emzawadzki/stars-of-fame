@@ -4,11 +4,14 @@ import Project from "./Project";
 
 const ProjectsList = ({ projects }) => {
 	return (
-		<div>
-			ProjectsList:
-			{projects && projects.map((el, i) => {
-				return <Project key={i} />;
-			})}
+		<div className="projects-list">
+			<h2 className="projects-list__title">Most starred projects</h2>
+			<ul className="projects-list__list">
+				{projects &&
+					projects.map((project, i) => {
+						return <Project key={i} project={project} />;
+					})}
+			</ul>
 		</div>
 	);
 };

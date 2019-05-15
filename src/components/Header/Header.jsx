@@ -1,9 +1,15 @@
 import React from "react";
 
+import Container from "../common/Container";
+
 const Header = () => {
 	return (
-		<header>
-			<h1>StarsOfFame</h1>
+		<header className="header">
+			<Container>
+				<h1 className="header__brand">
+					Stars<span className="header__distinction">Of</span>Fame
+				</h1>
+			</Container>
 		</header>
 	);
 };

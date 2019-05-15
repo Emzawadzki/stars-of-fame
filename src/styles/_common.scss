@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Roboto", sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: $font-size-base;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-family: "Roboto Slab", serif;
+		font-weight: bold;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 2rem;
+
+	@each $breakpoint, $size in $container-widths {
+		@include breakpoint-up($breakpoint) {
+			max-width: #{$size + "px"};
+		}
+	}
+}

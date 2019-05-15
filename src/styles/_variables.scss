@@ -1,0 +1,19 @@
+$primary: tomato;
+$primarylight: lighten($primary, 20%);
+$primarydark: darken($primary, 20%);
+
+$font-size-base: 1.6rem;
+
+$breakpoints: (
+	sm: 480,
+	md: 768,
+	lg: 992,
+	xl: 1200
+);
+
+$container-widths: (
+	sm: 480,
+	md: 728,
+	lg: 952,
+	xl: 1160
+);
