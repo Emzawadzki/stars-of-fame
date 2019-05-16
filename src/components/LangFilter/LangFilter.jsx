@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { changeLanguage } from "../../store/actions/filterActions";
+import { changeLanguage } from "../../store/actions/projectActions";
 
 class LangFilter extends Component {
 	handleChange = e => {
@@ -20,6 +20,7 @@ class LangFilter extends Component {
 						</option>
 					);
 				})}
+				<option value>ALL</option>
 			</select>
 		);
 	}

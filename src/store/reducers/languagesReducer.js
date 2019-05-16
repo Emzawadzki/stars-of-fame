@@ -1,15 +1,9 @@
 const initState = {
 	loading: false,
-	languages: [
-		{ urlParam: "javascript", name: "JavaScript" },
-		{ urlParam: "html+php", name: "HTML+PHP" },
-		{ urlParam: "java", name: "Java" }
-	]
+	languages: []
 };
 
 const languagesReducer = (state = initState, action) => {
-	console.log(state);
-
 	switch (action.type) {
 		case 'FETCH_LANGUAGES_BEGIN':
 			return {

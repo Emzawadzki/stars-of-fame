@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Project from "./Project";
 
@@ -16,4 +17,10 @@ const ProjectsList = ({ projects }) => {
 	);
 };
 
-export default ProjectsList;
+const mapStateToProps = ({ lang, proj }) => {
+	return {
+		projects: proj.projects
+	};
+};
+
+export default connect(mapStateToProps)(ProjectsList);

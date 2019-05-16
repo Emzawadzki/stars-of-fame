@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { changeSince } from "../../store/actions/filterActions";
+import { changeSince } from "../../store/actions/projectActions";
 
 class SinceFilter extends Component {
 	handleChange = e => {
