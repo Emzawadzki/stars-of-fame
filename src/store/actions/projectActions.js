@@ -1,16 +1,30 @@
 import axios from "axios";
 
-export function changeLanguage(lang) {
+export function changeLanguageInterface(lang) {
 	return {
 		type: "CHANGE_LANGUAGE",
 		lang
 	};
 }
 
-export function changeSince(param) {
+export function changeLanguage(lang) {
+	return (dispatch, getState) => {
+		dispatch(changeLanguageInterface(lang));
+		dispatch(fetchProjects(getState().proj.urlParams));
+	};
+}
+
+export function changeSinceInterface(param) {
 	return {
 		type: "CHANGE_SINCE",
 		param
+	};
+}
+
+export function changeSince(param) {
+	return (dispatch, getState) => {
+		dispatch(changeSinceInterface(param));
+		dispatch(fetchProjects(getState().proj.urlParams));
 	};
 }
 
