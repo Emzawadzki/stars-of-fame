@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const propTypes = {
 	project: PropTypes.shape({
@@ -28,11 +29,34 @@ const Project = props => {
 	return (
 		<li className={`project${props.primary ? " project--primary" : ""}`}>
 			<div className="project__inner">
-				<div>Current period stars: {project.currentPeriodStars}</div>
-				<div>Stars: {project.stars}</div>
-				<div>Name: {project.name}</div>
-				<div>Author: {project.author}</div>
-				<div style={{ backgroundColor: project.languageColor }}>Lang: {project.language}</div>
+				<div className="project__head">
+					<div className="project__cps-icon">
+						<FontAwesomeIcon icon={["fas", "star"]} />
+					</div>
+					<div className="project__cps">
+						<span className="hidden">Current period stars:</span>
+						{project.currentPeriodStars}
+					</div>
+					<h3 className="project__name">{project.name}</h3>
+					<p className="project__author">by {project.author}</p>
+					<div className="project__stars">
+						Overall stars: {project.stars}
+						<span className="project__stars-icon">
+							<FontAwesomeIcon icon={["fas", "star"]} />
+						</span>
+					</div>
+					<div className="project__forks">
+						Forks: {project.forks}
+						<span className="project__forks-icon">
+							<FontAwesomeIcon icon={["fas", "code-branch"]} />
+						</span>
+					</div>
+				</div>
+				{project.language ? (
+					<div className="project__language" style={{ backgroundColor: project.languageColor }}>
+						{project.language}
+					</div>
+				) : null}
 			</div>
 		</li>
 	);

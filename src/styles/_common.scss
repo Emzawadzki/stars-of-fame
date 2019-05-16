@@ -5,7 +5,7 @@
 }
 
 html {
-	font-family: "Roboto", sans-serif;
+	font-family: $font-family-base;
 	font-size: 62.5%;
 }
 
@@ -15,7 +15,7 @@ body {
 
 @for $i from 1 through 6 {
 	h#{$i} {
-		font-family: "Roboto Slab", serif;
+		font-family: $font-family-headings;
 		font-weight: bold;
 	}
 }
@@ -29,4 +29,12 @@ body {
 			max-width: #{$size + "px"};
 		}
 	}
+}
+
+.hidden {
+	position: absolute;
+	left: -9999px;
+	height: 1px;
+	width: 1px;
+	opacity: 0;
 }

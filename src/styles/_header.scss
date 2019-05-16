@@ -1,8 +1,13 @@
 .header {
-	background-image: linear-gradient(to top, $primary, $primarylight);
-	color: $primarydark;
+	background: $orange;
+	color: $light;
 
 	&__brand {
 		padding: 0.5rem 0;
+	}
+
+	&__distinction {
+		color: $blue;
+		margin: 0 0.25rem;
 	}
 }
