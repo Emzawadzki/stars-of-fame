@@ -8,6 +8,8 @@ export function changeLanguageInterface(lang) {
 }
 
 export function changeLanguage(lang) {
+	localStorage.setItem("projectsLanguage", lang);
+
 	return (dispatch, getState) => {
 		dispatch(changeLanguageInterface(lang));
 		dispatch(fetchProjects(getState().proj.urlParams));
@@ -22,6 +24,8 @@ export function changeSinceInterface(param) {
 }
 
 export function changeSince(param) {
+	localStorage.setItem(`projectsSince_${param}`, !localStorage.getItem(`projectsSince_${param}` === "true"));
+
 	return (dispatch, getState) => {
 		dispatch(changeSinceInterface(param));
 		dispatch(fetchProjects(getState().proj.urlParams));

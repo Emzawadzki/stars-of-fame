@@ -1,11 +1,11 @@
 const initState = {
 	projects: [],
 	urlParams: {
-		lang: "",
+		lang: localStorage.getItem("projectsLanguage"),
 		since: {
-			daily: false,
-			weekly: false,
-			monthly: false
+			daily: localStorage.getItem("projectsSince_daily") === "true",
+			weekly: localStorage.getItem("projectsSince_weekly") === "true",
+			monthly: localStorage.getItem("projectsSince_monthly") === "true"
 		}
 	}
 };

@@ -12,7 +12,7 @@ class LangFilter extends Component {
 		const { languages, activeLang } = this.props;
 
 		return (
-			<select value={activeLang} onChange={this.handleChange}>
+			<select value={activeLang || ""} onChange={this.handleChange}>
 				{languages.map(lang => {
 					return (
 						<option key={lang.urlParam} value={lang.urlParam}>
@@ -20,7 +20,7 @@ class LangFilter extends Component {
 						</option>
 					);
 				})}
-				<option value>ALL</option>
+				<option value="">ALL</option>
 			</select>
 		);
 	}
