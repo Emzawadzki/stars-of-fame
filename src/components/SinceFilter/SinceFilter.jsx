@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { changeSince } from "../../store/actions/projectActions";
+
+const propTypes = {
+	changeSince: PropTypes.func.isRequired,
+	params: PropTypes.object.isRequired
+};
 
 class SinceFilter extends Component {
 	handleChange = e => {
@@ -41,6 +47,8 @@ const mapDispatchToProps = dispatch => {
 		changeSince: param => dispatch(changeSince(param))
 	};
 };
+
+SinceFilter.propTypes = propTypes;
 
 export default connect(
 	mapStateToProps,

@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { changeLanguage } from "../../store/actions/projectActions";
+
+const propTypes = {
+	changeLanguage: PropTypes.func.isRequired,
+	languages: PropTypes.array.isRequired,
+	activeLang: PropTypes.string
+};
 
 class LangFilter extends Component {
 	handleChange = e => {
@@ -38,6 +45,8 @@ const mapDispatchToProps = dispatch => {
 		changeLanguage: lang => dispatch(changeLanguage(lang))
 	};
 };
+
+LangFilter.propTypes = propTypes;
 
 export default connect(
 	mapStateToProps,

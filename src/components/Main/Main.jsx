@@ -8,8 +8,9 @@ import SinceFilter from "../SinceFilter/SinceFilter";
 class Main extends Component {
 	render() {
 		return (
-			<main>
+			<main className="main">
 				<Container>
+					<h2 className="main__title">Most starred projects</h2>
 					<LangFilter />
 					<SinceFilter />
 					<ProjectsList />

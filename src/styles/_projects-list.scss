@@ -1,15 +1,6 @@
 .projects-list {
 	padding: 4rem 0;
-
-	&__title {
-		text-align: center;
-		margin-bottom: 4rem;
-		font-size: 3rem;
-	}
-
-	&__list {
-		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
-	}
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
 }
