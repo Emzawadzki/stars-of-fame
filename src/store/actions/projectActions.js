@@ -32,6 +32,15 @@ export function changeSince(param) {
 	};
 }
 
+export function changeSortBy(property) {
+	localStorage.setItem("projectsSortBy", property);
+
+	return {
+		type: "CHANGE_SORT_BY",
+		property
+	};
+}
+
 export function fetchProjectsBegin() {
 	return {
 		type: "FETCH_PROJECTS_BEGIN"

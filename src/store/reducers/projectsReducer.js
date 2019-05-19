@@ -1,13 +1,14 @@
 const initState = {
 	projects: [],
 	urlParams: {
-		lang: localStorage.getItem("projectsLanguage"),
+		lang: localStorage.getItem("projectsLanguage") || "",
 		since: {
 			daily: localStorage.getItem("projectsSince_daily") === "true",
 			weekly: localStorage.getItem("projectsSince_weekly") === "true",
 			monthly: localStorage.getItem("projectsSince_monthly") === "true"
 		}
-	}
+	},
+	sortBy: localStorage.getItem("projectsSortBy") || ""
 };
 
 const projectsReducer = (state = initState, action) => {
@@ -31,6 +32,12 @@ const projectsReducer = (state = initState, action) => {
 						[action.param]: !state.urlParams.since[action.param]
 					}
 				}
+			};
+
+		case "CHANGE_SORT_BY":
+			return {
+				...state,
+				sortBy: action.property
 			};
 
 		case "FETCH_PROJECTS_BEGIN":

@@ -22,16 +22,6 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 store.dispatch(fetchLanguages()).then(store.dispatch(fetchProjects(store.getState().proj.urlParams)));
 
-if (!localStorage.getItem("projectsLanguage")) {
-	localStorage.setItem("projectsLanguage", store.getState().proj.urlParams.lang);
-}
-
-Object.keys(store.getState().proj.urlParams.since).forEach(el => {
-	if (!localStorage.getItem("projectsSince_" + el)) {
-		localStorage.setItem("projectsSince_" + el, store.getState().proj.urlParams.since[el]);
-	}
-});
-
 ReactDOM.render(
 	<Provider store={store}>
 		<App />

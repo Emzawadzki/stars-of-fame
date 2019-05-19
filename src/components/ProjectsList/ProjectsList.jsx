@@ -5,24 +5,28 @@ import { connect } from "react-redux";
 import Project from "./Project";
 
 const propTypes = {
-	projects: PropTypes.array.isRequired
+	projects: PropTypes.array.isRequired,
+	sortBy: PropTypes.string.isRequired
 };
 
-const ProjectsList = ({ projects }) => {
+const ProjectsList = ({ projects, sortBy }) => {
+	if (sortBy) {
+		projects.sort((a, b) => Number(b[sortBy]) - Number(a[sortBy]));
+	}
+
 	return (
 		<ul className="projects-list">
-			{projects
-				.sort((a, b) => Number(b.currentPeriodStars) - Number(a.currentPeriodStars))
-				.map((project, i) => {
-					return <Project key={i} primary={i === 0} project={project} />;
-				})}
+			{projects.map((project, i) => (
+				<Project key={i} primary={i === 0} project={project} />
+			))}
 		</ul>
 	);
 };
 
 const mapStateToProps = ({ proj }) => {
 	return {
-		projects: proj.projects
+		projects: proj.projects,
+		sortBy: proj.sortBy
 	};
 };
 
