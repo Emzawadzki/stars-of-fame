@@ -3,13 +3,11 @@
 	padding: 2rem;
 
 	@include breakpoint-up(md) {
-		width: 33.33%;
+		width: 50%;
 	}
 
-	&--primary {
-		@include breakpoint-up(md) {
-			width: 100%;
-		}
+	@include breakpoint-up(lg) {
+		width: 33.33%;
 	}
 
 	&__inner {
@@ -22,9 +20,22 @@
 		justify-content: space-between;
 		align-items: center;
 		text-align: center;
+		position: relative;
 	}
 
-	&__head {
+	&__url {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 3rem;
+		line-height: 1;
+		padding: 0.5rem;
+		color: #000;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $orange;
+		}
 	}
 
 	&__cps {
@@ -38,17 +49,57 @@
 		font-size: 4rem;
 	}
 
-	&__stars {
-	}
-
-	&__stars-icon {
-		color: $orange;
+	&__property-icon {
 		margin-left: 0.25rem;
+
+		&--orange {
+			color: $orange;
+		}
 	}
 
 	&__author {
 		font-size: 1.2rem;
 		margin-bottom: 1rem;
+	}
+
+	&__contributors {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 1.5rem 0;
+	}
+
+	&__contributors-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__contributor {
+		display: block;
+		height: 4rem;
+		width: 4rem;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0.25rem;
+		transition: box-shadow 0.3s;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		&:hover {
+			box-shadow: 1px 1px 5px rgba($blue, 0.7);
+		}
+	}
+
+	&__description {
+		font-size: 1.4rem;
+		margin: 1.5rem 0;
 	}
 
 	&__language {

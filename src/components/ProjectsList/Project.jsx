@@ -23,13 +23,15 @@ const propTypes = {
 	}).isRequired
 };
 
-const Project = props => {
-	const project = props.project;
-
+const Project = ({ project }) => {
 	return (
-		<li className={`project${props.primary ? " project--primary" : ""}`}>
+		<li className="project">
 			<div className="project__inner">
-				<div className="project__head">
+				<a className="project__url" href={project.url} target="_blank" rel="noopener noreferrer">
+					<span className="hidden">See on github</span>
+					<FontAwesomeIcon icon={["fab", "github"]} />
+				</a>
+				<div>
 					<div className="project__cps-icon">
 						<FontAwesomeIcon icon={["fas", "star"]} />
 					</div>
@@ -39,19 +41,38 @@ const Project = props => {
 					</div>
 					<h3 className="project__name">{project.name}</h3>
 					<p className="project__author">by {project.author}</p>
-					<div className="project__stars">
+					<div className="project__property">
 						Overall stars: {project.stars}
-						<span className="project__stars-icon">
+						<span className="project__property-icon project__property-icon--orange">
 							<FontAwesomeIcon icon={["fas", "star"]} />
 						</span>
 					</div>
-					<div className="project__forks">
+					<div className="project__property">
 						Forks: {project.forks}
-						<span className="project__forks-icon">
+						<span className="project__property-icon">
 							<FontAwesomeIcon icon={["fas", "code-branch"]} />
 						</span>
 					</div>
+					<div className="project__description">{project.description}</div>
+					<div className="project__contributors">
+						Built by:
+						<ul className="project__contributors-list">
+							{project.builtBy.map((user, i) => (
+								<li key={i}>
+									<a
+										className="project__contributor"
+										href={user.href}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img src={user.avatar} alt={user.username} />
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
+
 				{project.language ? (
 					<div className="project__language" style={{ backgroundColor: project.languageColor }}>
 						{project.language}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -10,28 +10,22 @@ const propTypes = {
 	activeLang: PropTypes.string
 };
 
-class LangFilter extends Component {
-	handleChange = e => {
-		this.props.changeLanguage(e.target.value);
+const LangFilter = ({ changeLanguage, languages, activeLang }) => {
+	const handleChange = e => {
+		changeLanguage(e.target.value);
 	};
 
-	render() {
-		const { languages, activeLang } = this.props;
-
-		return (
-			<select value={activeLang || ""} onChange={this.handleChange}>
-				{languages.map(lang => {
-					return (
-						<option key={lang.urlParam} value={lang.urlParam}>
-							{lang.name}
-						</option>
-					);
-				})}
-				<option value="">ALL</option>
-			</select>
-		);
-	}
-}
+	return (
+		<select value={activeLang || ""} onChange={handleChange}>
+			{languages.map(lang => (
+				<option key={lang.urlParam} value={lang.urlParam}>
+					{lang.name}
+				</option>
+			))}
+			<option value="">ALL</option>
+		</select>
+	);
+};
 
 const mapStateToProps = ({ lang, proj }) => {
 	return {
