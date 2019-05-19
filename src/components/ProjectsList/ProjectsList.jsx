@@ -10,13 +10,15 @@ const propTypes = {
 };
 
 const ProjectsList = ({ projects, sortBy }) => {
+	let sortedProjects = [...projects];
+
 	if (sortBy) {
-		projects.sort((a, b) => Number(b[sortBy]) - Number(a[sortBy]));
+		sortedProjects.sort((a, b) => Number(b[sortBy]) - Number(a[sortBy]));
 	}
 
 	return (
 		<ul className="projects-list">
-			{projects.map((project, i) => (
+			{sortedProjects.map((project, i) => (
 				<Project key={i} primary={i === 0} project={project} />
 			))}
 		</ul>
