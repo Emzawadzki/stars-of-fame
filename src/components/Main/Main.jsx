@@ -11,9 +11,17 @@ const Main = () => {
 		<main className="main">
 			<Container>
 				<h2 className="main__title">Most starred projects</h2>
-				<LangFilter />
-				<SinceFilter />
-				<SortList />
+				<div className="main__filters">
+					<div className="main__filter">
+						<LangFilter />
+					</div>
+					<div className="main__filter">
+						<SortList />
+					</div>
+					<div className="main__filter main__filter--wide">
+						<SinceFilter />
+					</div>
+				</div>
 				<ProjectsList />
 			</Container>
 		</main>

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Select from "react-select";
 
 import { changeLanguage } from "../../store/actions/projectActions";
 
@@ -11,19 +12,37 @@ const propTypes = {
 };
 
 const LangFilter = ({ changeLanguage, languages, activeLang }) => {
-	const handleChange = e => {
-		changeLanguage(e.target.value);
+	const handleChange = option => {
+		changeLanguage(option.value);
 	};
 
+	const options = [
+		{
+			label: "All",
+			value: ""
+		},
+		...languages.map(lang => {
+			return {
+				label: lang.name,
+				value: lang.urlParam
+			};
+		})
+	];
+
+	const currentOption = options.find(option => option.value === activeLang);
+
 	return (
-		<select value={activeLang || ""} onChange={handleChange}>
-			{languages.map(lang => (
-				<option key={lang.urlParam} value={lang.urlParam}>
-					{lang.name}
-				</option>
-			))}
-			<option value="">ALL</option>
-		</select>
+		<label htmlFor="language" className="select">
+			<span className="select__label">Language:</span>
+			<Select
+				name="language"
+				onChange={handleChange}
+				options={options}
+				placeholder="Select language"
+				value={currentOption}
+				styles={{}}
+			/>
+		</label>
 	);
 };
 

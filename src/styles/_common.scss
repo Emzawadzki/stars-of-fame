@@ -7,6 +7,7 @@
 html {
 	font-family: $font-family-base;
 	font-size: 62.5%;
+	color: $font-color;
 }
 
 body {
@@ -37,4 +38,55 @@ body {
 	height: 1px;
 	width: 1px;
 	opacity: 0;
+}
+
+.check-list {
+	$p: &;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__name {
+		flex-basis: 100%;
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	&__item {
+		margin: 0.5rem;
+	}
+
+	&__label {
+		display: block;
+		padding: 0.5rem;
+		border: 2px solid $blue;
+		border-radius: $border-radius;
+		cursor: pointer;
+		color: rgba($font-color, 0.5);
+
+		&:hover {
+			color: rgba($font-color, 1);
+		}
+	}
+
+	&__input {
+		position: absolute;
+		height: 1px;
+		width: 1px;
+		opacity: 0;
+
+		&:checked ~ #{$p}__label {
+			color: rgba($font-color, 1);
+		}
+	}
+}
+
+.select {
+	&__label {
+		margin-bottom: 1rem;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
 }

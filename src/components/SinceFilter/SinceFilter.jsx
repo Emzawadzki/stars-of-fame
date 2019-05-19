@@ -15,12 +15,22 @@ const SinceFilter = ({ changeSince, params }) => {
 	};
 
 	return (
-		<div>
+		<div className="check-list">
+			<span className="check-list__name">Projects since:</span>
 			{Object.keys(params).map(key => (
-				<label htmlFor={key} key={key}>
-					{key}
-					<input type="checkbox" name={key} defaultChecked={params[key]} onChange={handleChange} />
-				</label>
+				<div className="check-list__item" key={key}>
+					<input
+						className="check-list__input"
+						type="checkbox"
+						name={key}
+						defaultChecked={params[key]}
+						onChange={handleChange}
+						id={`since-${key}`}
+					/>
+					<label className="check-list__label" htmlFor={`since-${key}`}>
+						{key}
+					</label>
+				</div>
 			))}
 		</div>
 	);

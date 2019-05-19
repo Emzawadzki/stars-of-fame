@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Select from "react-select";
 
 import { changeSortBy } from "../../store/actions/projectActions";
 
@@ -10,17 +11,44 @@ const propTypes = {
 };
 
 const SortList = ({ changeSortBy, sortBy }) => {
-	const handleChange = e => {
-		changeSortBy(e.target.value);
+	const handleChange = option => {
+		changeSortBy(option.value);
 	};
 
+	const options = [
+		{
+			value: "",
+			label: "none"
+		},
+		{
+			value: "currentPeriodStars",
+			label: "Current period stars"
+		},
+		{
+			value: "stars",
+			label: "Overall stars"
+		},
+		{
+			value: "forks",
+			label: "Forks"
+		}
+	];
+
+	const currentOption = options.find(option => option.value === sortBy);
+
 	return (
-		<select name="sort-by" value={sortBy} onChange={handleChange}>
-			<option value="">-</option>
-			<option value="currentPeriodStars">currentPeriodStars</option>
-			<option value="stars">stars</option>
-			<option value="forks">forks</option>
-		</select>
+		<label htmlFor="sort-by" className="select">
+			<span className="select__label">Sort by:</span>
+			<Select
+				className="select"
+				classNamePrefix="select"
+				name="sort-by"
+				onChange={handleChange}
+				options={options}
+				placeholder="Sort by"
+				value={currentOption}
+			/>
+		</label>
 	);
 };
 
