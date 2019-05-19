@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/stars-of-fame/precache-manifest.57227b30fc9851b33bf9c4886e0df8be.js"
+  "/stars-of-fame/precache-manifest.234a0c17f632a9da83c97cd64aaf28d9.js"
 );
 
 self.addEventListener('message', (event) => {

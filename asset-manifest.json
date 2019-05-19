@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stars-of-fame/static/css/main.113871f2.chunk.css",
-    "main.js": "/stars-of-fame/static/js/main.0b27327f.chunk.js",
-    "main.js.map": "/stars-of-fame/static/js/main.0b27327f.chunk.js.map",
+    "main.js": "/stars-of-fame/static/js/main.efb20b12.chunk.js",
+    "main.js.map": "/stars-of-fame/static/js/main.efb20b12.chunk.js.map",
     "runtime~main.js": "/stars-of-fame/static/js/runtime~main.0b8014fc.js",
     "runtime~main.js.map": "/stars-of-fame/static/js/runtime~main.0b8014fc.js.map",
-    "static/js/2.63dfe4bd.chunk.js": "/stars-of-fame/static/js/2.63dfe4bd.chunk.js",
-    "static/js/2.63dfe4bd.chunk.js.map": "/stars-of-fame/static/js/2.63dfe4bd.chunk.js.map",
+    "static/js/2.3d88ce51.chunk.js": "/stars-of-fame/static/js/2.3d88ce51.chunk.js",
+    "static/js/2.3d88ce51.chunk.js.map": "/stars-of-fame/static/js/2.3d88ce51.chunk.js.map",
     "index.html": "/stars-of-fame/index.html",
-    "precache-manifest.57227b30fc9851b33bf9c4886e0df8be.js": "/stars-of-fame/precache-manifest.57227b30fc9851b33bf9c4886e0df8be.js",
+    "precache-manifest.234a0c17f632a9da83c97cd64aaf28d9.js": "/stars-of-fame/precache-manifest.234a0c17f632a9da83c97cd64aaf28d9.js",
     "service-worker.js": "/stars-of-fame/service-worker.js",
     "static/css/main.113871f2.chunk.css.map": "/stars-of-fame/static/css/main.113871f2.chunk.css.map"
   }
