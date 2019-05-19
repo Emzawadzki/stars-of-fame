@@ -1,0 +1,80 @@
+.container {
+	margin: 0 auto;
+	padding: 0 2rem;
+	position: relative;
+
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		background: rgba($light, 0.7);
+		transition: opacity 0.3s;
+		z-index: 999;
+		pointer-events: none;
+	}
+
+	@each $breakpoint, $size in $container-widths {
+		@include breakpoint-up($breakpoint) {
+			max-width: #{$size + "px"};
+		}
+	}
+
+	&--loading:before {
+		pointer-events: all;
+		opacity: 1;
+	}
+
+	&__spinner {
+		color: $blue;
+		font-size: 0.7rem;
+		margin: 3rem auto;
+		position: relative;
+		transform: translateZ(0);
+
+		&,
+		&:before,
+		&:after {
+			border-radius: 50%;
+			width: 2.5rem;
+			height: 2.5rem;
+			animation-fill-mode: both;
+			animation: grow 1.8s infinite ease-in-out;
+		}
+
+		& {
+			animation-delay: -0.16s;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+		}
+
+		&:before {
+			left: -3.5rem;
+			animation-delay: -0.32s;
+		}
+
+		&:after {
+			left: 3.5rem;
+		}
+
+		@keyframes grow {
+			0%,
+			80%,
+			100% {
+				box-shadow: 0 2.5rem 0 -1.3rem;
+			}
+			40% {
+				box-shadow: 0 2.5rem 0 0;
+			}
+		}
+	}
+}

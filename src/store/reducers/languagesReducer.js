@@ -1,5 +1,6 @@
 const initState = {
 	loading: false,
+	error: null,
 	languages: []
 };
 

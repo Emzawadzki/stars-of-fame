@@ -43,23 +43,27 @@ export function changeSortBy(property) {
 
 export function fetchProjectsBegin() {
 	return {
-		type: "FETCH_PROJECTS_BEGIN"
+		type: "FETCH_PROJECTS_BEGIN",
+		loading: true
 	};
 }
 
 export function fetchProjectsSuccess(projects) {
 	return {
 		type: "FETCH_PROJECTS_SUCCESS",
-		projects
+		projects,
+		loading: false
 	};
 }
 
 export function fetchProjectsError(error) {
+	// @TODO: errors handling
 	console.warn("Fetch projects error:");
 	console.warn(error);
 	return {
 		type: "FETCH_PROJECTS_ERROR",
-		error
+		error,
+		loading: false
 	};
 }
 

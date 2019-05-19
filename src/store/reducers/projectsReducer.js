@@ -1,4 +1,6 @@
 const initState = {
+	loading: false,
+	error: null,
 	projects: [],
 	urlParams: {
 		lang: localStorage.getItem("projectsLanguage") || "",

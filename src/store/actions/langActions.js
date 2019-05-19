@@ -14,6 +14,7 @@ export function fetchLanguagesSuccess(languages) {
 }
 
 export function fetchLanguagesError(error) {
+	// @TODO: errors handling
 	console.warn("Fetch languages error:");
 	console.warn(error);
 	return {

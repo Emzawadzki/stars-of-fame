@@ -1,6 +1,7 @@
 .main {
 	padding: 4rem 0;
 	background: $light;
+	flex-grow: 1;
 
 	&__title {
 		text-align: center;

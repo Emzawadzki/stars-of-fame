@@ -41,6 +41,7 @@ const Project = ({ project }) => {
 					</div>
 					<h3 className="project__name">{project.name}</h3>
 					<p className="project__author">by {project.author}</p>
+					<div className="project__description">{project.description}</div>
 					<div className="project__property">
 						Overall stars: {project.stars}
 						<span className="project__property-icon project__property-icon--orange">
@@ -53,7 +54,6 @@ const Project = ({ project }) => {
 							<FontAwesomeIcon icon={["fas", "code-branch"]} />
 						</span>
 					</div>
-					<div className="project__description">{project.description}</div>
 					<div className="project__contributors">
 						Built by:
 						<ul className="project__contributors-list">

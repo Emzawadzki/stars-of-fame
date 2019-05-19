@@ -14,21 +14,16 @@ body {
 	font-size: $font-size-base;
 }
 
+.layout {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 @for $i from 1 through 6 {
 	h#{$i} {
 		font-family: $font-family-headings;
 		font-weight: bold;
-	}
-}
-
-.container {
-	margin: 0 auto;
-	padding: 0 2rem;
-
-	@each $breakpoint, $size in $container-widths {
-		@include breakpoint-up($breakpoint) {
-			max-width: #{$size + "px"};
-		}
 	}
 }
 
