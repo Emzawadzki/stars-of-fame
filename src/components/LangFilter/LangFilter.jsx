@@ -7,15 +7,15 @@ import { changeLanguage } from "../../store/actions/projectActions";
 
 const propTypes = {
 	changeLanguage: PropTypes.func.isRequired,
-	languages: PropTypes.array.isRequired,
+	languages: PropTypes.array,
 	activeLang: PropTypes.string
 };
 
-const LangFilter = ({ changeLanguage, languages, activeLang }) => {
+const LangFilter = ({ changeLanguage, languages = [], activeLang }) => {
 	const handleChange = option => {
 		changeLanguage(option.value);
 	};
-
+	
 	const options = [
 		{
 			label: "All",

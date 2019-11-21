@@ -14,7 +14,6 @@ export function fetchLanguagesSuccess(languages) {
 }
 
 export function fetchLanguagesError(error) {
-	// @TODO: errors handling
 	console.warn("Fetch languages error:");
 	console.warn(error);
 	return {
@@ -29,8 +28,11 @@ export function fetchLanguages() {
 		return axios
 			.get("https://github-trending-api.now.sh/languages")
 			.then(response => {
-				dispatch(fetchLanguagesSuccess(response.data.popular));
-				return response.data;
+				if (response.status === 200 && response.data) {
+					dispatch(fetchLanguagesSuccess(response.data));
+				} else {
+					throw Error("Fetching languages failed!");
+				}
 			})
 			.catch(error => dispatch(fetchLanguagesError(error)));
 	};
