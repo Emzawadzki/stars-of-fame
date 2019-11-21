@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/stars-of-fame/static/css/main.113871f2.chunk.css",
-    "main.js": "/stars-of-fame/static/js/main.efb20b12.chunk.js",
-    "main.js.map": "/stars-of-fame/static/js/main.efb20b12.chunk.js.map",
-    "runtime~main.js": "/stars-of-fame/static/js/runtime~main.0b8014fc.js",
-    "runtime~main.js.map": "/stars-of-fame/static/js/runtime~main.0b8014fc.js.map",
-    "static/js/2.3d88ce51.chunk.js": "/stars-of-fame/static/js/2.3d88ce51.chunk.js",
-    "static/js/2.3d88ce51.chunk.js.map": "/stars-of-fame/static/js/2.3d88ce51.chunk.js.map",
+    "main.css": "/stars-of-fame/static/css/main.e869db97.chunk.css",
+    "main.js": "/stars-of-fame/static/js/main.b129d612.chunk.js",
+    "main.js.map": "/stars-of-fame/static/js/main.b129d612.chunk.js.map",
+    "runtime-main.js": "/stars-of-fame/static/js/runtime-main.46f86fff.js",
+    "runtime-main.js.map": "/stars-of-fame/static/js/runtime-main.46f86fff.js.map",
+    "static/js/2.38e5715c.chunk.js": "/stars-of-fame/static/js/2.38e5715c.chunk.js",
+    "static/js/2.38e5715c.chunk.js.map": "/stars-of-fame/static/js/2.38e5715c.chunk.js.map",
     "index.html": "/stars-of-fame/index.html",
-    "precache-manifest.234a0c17f632a9da83c97cd64aaf28d9.js": "/stars-of-fame/precache-manifest.234a0c17f632a9da83c97cd64aaf28d9.js",
+    "precache-manifest.fc6181645bc51c6f92b3a21563d6dbbb.js": "/stars-of-fame/precache-manifest.fc6181645bc51c6f92b3a21563d6dbbb.js",
     "service-worker.js": "/stars-of-fame/service-worker.js",
-    "static/css/main.113871f2.chunk.css.map": "/stars-of-fame/static/css/main.113871f2.chunk.css.map"
-  }
+    "static/css/main.e869db97.chunk.css.map": "/stars-of-fame/static/css/main.e869db97.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46f86fff.js",
+    "static/js/2.38e5715c.chunk.js",
+    "static/css/main.e869db97.chunk.css",
+    "static/js/main.b129d612.chunk.js"
+  ]
 }
