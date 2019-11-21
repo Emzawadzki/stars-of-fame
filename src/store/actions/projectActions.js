@@ -57,7 +57,6 @@ export function fetchProjectsSuccess(projects) {
 }
 
 export function fetchProjectsError(error) {
-	// @TODO: errors handling
 	console.warn("Fetch projects error:");
 	console.warn(error);
 	return {
@@ -90,8 +89,11 @@ export function fetchProjects({ lang, since }) {
 		return axios
 			.get(url)
 			.then(response => {
-				dispatch(fetchProjectsSuccess(response.data));
-				return response.data;
+				if (response.status === 200 && response.data) {
+					dispatch(fetchProjectsSuccess(response.data));
+				} else {
+					throw Error("Fetching projects failed!");
+				}
 			})
 			.catch(error => dispatch(fetchProjectsError(error)));
 	};

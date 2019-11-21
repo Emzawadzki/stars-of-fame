@@ -1,5 +1,5 @@
 # Stars of fame
-> React & Redux application with use of external API
+> React & Redux application with use of [Github trending repositories API](https://github.com/huchenme/github-trending-api)
 
 ### [LIVE PREVIEW](https://emzawadzki.github.io/stars-of-fame/)
 
